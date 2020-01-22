@@ -3,4 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+    <bean id="person" class="com.gatesma.bean.Person">
+        <property name="age" value="18"></property>
+        <property name="name" value="zhangsan"></property>
+    </bean>
+
+
 </beans>
