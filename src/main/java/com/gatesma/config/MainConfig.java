@@ -1,5 +1,9 @@
 package com.gatesma.config;
 
+import com.gatesma.bean.Person;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 /**
  * Copyright (C), 2020
  * FileName: MainConfig
@@ -8,8 +12,14 @@ package com.gatesma.config;
  * Date:     2020/1/22 21:00
  * Description:
  */
+@Configuration
 public class MainConfig {
 
-     
+
+    @Bean
+    public Person person() {
+        return new Person("lishi", 20);
+    }
+
 
 }
