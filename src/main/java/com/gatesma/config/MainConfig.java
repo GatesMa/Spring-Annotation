@@ -1,11 +1,8 @@
 package com.gatesma.config;
 
 import com.gatesma.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +15,25 @@ import org.springframework.stereotype.Service;
  * Description:
  */
 @Configuration
-@ComponentScan(value = {"com.gatesma"}, excludeFilters = {
-        @Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class})
-})
+//@ComponentScan(value = {"com.gatesma"},
+////        excludeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class})},
+//        includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class})},
+//        useDefaultFilters = false
+//)
+@ComponentScans(
+        value = {
+//                @ComponentScan(value="com.gatesma",includeFilters = {
+///*						@Filter(type=FilterType.ANNOTATION,classes={Controller.class}),
+//						@Filter(type=FilterType.ASSIGNABLE_TYPE,classes={BookService.class}),*/
+//                        @Filter(type=FilterType.CUSTOM,classes={MyTypeFilter.class})
+//                },useDefaultFilters = false)
+                @ComponentScan(value = {"com.gatesma"},
+                //        excludeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class})},
+                        includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class})},
+                        useDefaultFilters = false
+                )
+        }
+)
 //@ComponentScan  value:指定要扫描的包
 //excludeFilters = Filter[] ：指定扫描的时候按照什么规则排除那些组件
 //includeFilters = Filter[] ：指定扫描的时候只需要包含哪些组件
