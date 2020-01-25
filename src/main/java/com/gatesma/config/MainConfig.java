@@ -37,11 +37,9 @@ import org.springframework.context.annotation.Configuration;
  *
  * --------------
  * 不常用：
- * Document:被javadoc提取成文档，默认是不包含注解的 
+ * Document:被javadoc提取成文档，默认是不包含注解的
  *
- * Inherited
- *
- *
+ * Inherited：子类是否继承父类的注解
  */
 
 public class MainConfig {
