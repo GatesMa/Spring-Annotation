@@ -32,6 +32,16 @@ import org.springframework.context.annotation.Configuration;
  * Retention：生命周期：SOURCE、CLASS、RUNTIME，只有声明为RUNTIME才可以使用反射获取
  *      SuppressWarning是SOURCE
  * Target：指定修饰的注解可以修饰哪些元素：TYPE、FIELD、PARAMETER...
+ *
+ * - 如果我们自定义注解，通常需要写这两个元注解
+ *
+ * --------------
+ * 不常用：
+ * Document:被javadoc提取成文档，默认是不包含注解的 
+ *
+ * Inherited
+ *
+ *
  */
 
 public class MainConfig {
