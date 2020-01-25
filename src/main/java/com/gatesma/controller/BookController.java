@@ -1,5 +1,7 @@
 package com.gatesma.controller;
 
+import org.springframework.stereotype.Controller;
+
 /**
  * Copyright (C), 2020
  * FileName: BookController
@@ -8,5 +10,6 @@ package com.gatesma.controller;
  * Date:     2020/1/23 16:20
  * Description:
  */
+@Controller
 public class BookController {
 }

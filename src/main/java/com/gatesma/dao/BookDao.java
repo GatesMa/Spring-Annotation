@@ -1,5 +1,7 @@
 package com.gatesma.dao;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Copyright (C), 2020
  * FileName: BookDao
@@ -8,5 +10,6 @@ package com.gatesma.dao;
  * Date:     2020/1/23 16:20
  * Description:
  */
+@Repository
 public class BookDao {
 }
