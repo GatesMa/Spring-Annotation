@@ -1,6 +1,7 @@
 package com.gatesma.config;
 
 import com.gatesma.bean.Person;
+import com.gatesma.service.BookService;
 import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,11 @@ import org.springframework.stereotype.Service;
 //                },useDefaultFilters = false)
                 @ComponentScan(value = {"com.gatesma"},
                 //        excludeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class})},
-                        includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = {Controller.class})},
+                        includeFilters = {
+//                        @Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
+//                                          @Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}),
+                                            //Filter自定义拦截器
+                                          @Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})},
                         useDefaultFilters = false
                 )
         }
