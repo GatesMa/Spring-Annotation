@@ -20,12 +20,12 @@ public class IOCTest {
     public void test02() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
         String[] names = applicationContext.getBeanDefinitionNames();
-        for(String name : names) {
-            System.out.println(name);
-        }
-        Object bean = applicationContext.getBean("person");
-        Object bean2 = applicationContext.getBean("person");
-        System.out.println(bean == bean2);
+//        for(String name : names) {
+//            System.out.println(name);
+//        }
+//        Object bean = applicationContext.getBean("person");
+//        Object bean2 = applicationContext.getBean("person");
+//        System.out.println(bean == bean2);
     }
 
     @Test

@@ -39,14 +39,15 @@ public class MainConfig2 {
      */
     /**
      * 懒加载：
-     * 		单实例bean：默认在容器启动的时候创建对象；
+     * 		针对单实例bean（Prototype类型默认懒加载）：默认在容器启动的时候创建对象；
      * 		懒加载：容器启动不创建对象。第一次使用(获取)Bean创建对象，并初始化；
      * @return
      */
     @Scope("prototype")
-//    @Lazy
+    @Lazy
     @Bean("person")
     public Person person() {
+        System.out.println("添加Person对象");
         return new Person("zhangsan", 19);
     }
 
