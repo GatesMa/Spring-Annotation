@@ -4,6 +4,8 @@ import com.gatesma.bean.Color;
 import com.gatesma.bean.Person;
 import com.gatesma.bean.Red;
 import com.gatesma.condition.LinuxCondition;
+import com.gatesma.condition.MyImportBeanDefinitionRegistrar;
+import com.gatesma.condition.MyImportSelector;
 import com.gatesma.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
@@ -21,7 +23,7 @@ import org.springframework.context.annotation.*;
 @SuppressWarnings("ALL")
 @Configuration
 //@Import导入组件，id默认是组件的全类名
-@Import({Color.class, Red.class})
+@Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 
 
