@@ -6,6 +6,9 @@ import com.gatesma.config.MainConfig;
 import com.gatesma.config.MainConfig2;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
+
+import java.util.Map;
 
 /**
  * Copyright (C), 2020
@@ -22,10 +25,18 @@ public class IOCTest {
     
     @Test
     public void test03()     {
-        
-        String[] names = applicationContext.getBeanNamesForType(Person.class);
-        for(String name : names) {
-            System.out.println(name);
+        ConfigurableEnvironment environment = applicationContext.getEnvironment();
+        String property = environment.getProperty("os.name");
+        System.out.println(property);
+
+//        String[] names = applicationContext.getBeanNamesForType(Person.class);
+//        for(String name : names) {
+//            System.out.println(name);
+//        }
+
+        Map<String, Person> beans = applicationContext.getBeansOfType(Person.class);
+        for(Map.Entry<String, Person> entry : beans.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 

@@ -1,6 +1,8 @@
 package com.gatesma.config;
 
 import com.gatesma.bean.Person;
+import com.gatesma.condition.LinuxCondition;
+import com.gatesma.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
 
@@ -12,6 +14,8 @@ import org.springframework.context.annotation.*;
  * Date:     2020/1/26 12:28
  * Description:
  */
+//@Condition也可以加在类上面
+//@Conditional(LinuxCondition.class)
 @SuppressWarnings("ALL")
 @Configuration
 public class MainConfig2 {
@@ -44,7 +48,7 @@ public class MainConfig2 {
     @Lazy
     @Bean("person")
     public Person person() {
-        System.out.println("添加Person对象");
+//        System.out.println("添加Person对象");
         return new Person("zhangsan", 19);
     }
 
@@ -55,12 +59,13 @@ public class MainConfig2 {
      * 如果是linux系统，给容器中注册("linus")
      */
 
+    @Conditional(WindowsCondition.class)
     @Bean("bill")
     public Person person01(){
         return new Person("Bill Gates",62);
     }
 
-//    @Conditional(LinuxCondition.class)
+    @Conditional(LinuxCondition.class)
     @Bean("linus")
     public Person person02(){
         return new Person("linus", 48);
