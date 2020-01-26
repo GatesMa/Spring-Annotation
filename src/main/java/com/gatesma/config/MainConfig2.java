@@ -2,10 +2,7 @@ package com.gatesma.config;
 
 import com.gatesma.bean.Person;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 /**
  * Copyright (C), 2020
@@ -49,6 +46,24 @@ public class MainConfig2 {
     public Person person() {
         System.out.println("添加Person对象");
         return new Person("zhangsan", 19);
+    }
+
+    /**
+     * @Conditional({Condition}) ： 按照一定的条件进行判断，满足条件给容器中注册bean
+     *
+     * 如果系统是windows，给容器中注册("bill")
+     * 如果是linux系统，给容器中注册("linus")
+     */
+
+    @Bean("bill")
+    public Person person01(){
+        return new Person("Bill Gates",62);
+    }
+
+//    @Conditional(LinuxCondition.class)
+    @Bean("linus")
+    public Person person02(){
+        return new Person("linus", 48);
     }
 
 
