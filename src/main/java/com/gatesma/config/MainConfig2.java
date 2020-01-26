@@ -1,6 +1,8 @@
 package com.gatesma.config;
 
+import com.gatesma.bean.Color;
 import com.gatesma.bean.Person;
+import com.gatesma.bean.Red;
 import com.gatesma.condition.LinuxCondition;
 import com.gatesma.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -18,6 +20,8 @@ import org.springframework.context.annotation.*;
 //@Conditional(LinuxCondition.class)
 @SuppressWarnings("ALL")
 @Configuration
+//@Import导入组件，id默认是组件的全类名
+@Import({Color.class, Red.class})
 public class MainConfig2 {
 
 
@@ -70,6 +74,25 @@ public class MainConfig2 {
     public Person person02(){
         return new Person("linus", 48);
     }
+
+
+    /**
+     * 导入Bean的四种方式：
+     * 1）包扫描+组件标注注解：@Controller、@Service...
+     * 2）@Bean导入第三方包里的组件
+     * 3）@Import【快速给容器中导入一个组件】
+     *      1）、@Import(要导入到容器中的组件)；容器中就会自动注册这个组件，id默认是全类名
+     *      2）、ImportSelector:返回需要导入的组件的全类名数组；
+     * 		3）、ImportBeanDefinitionRegistrar:手动注册bean到容器中
+     * 4）使用Spring提供的 FactoryBean（工厂Bean）;
+     * 		1）、默认获取到的是工厂bean调用getObject创建的对象
+     * 		2）、要获取工厂Bean本身，我们需要给id前面加一个&
+     * 			&colorFactoryBean
+     */
+
+
+
+
 
 
 }
