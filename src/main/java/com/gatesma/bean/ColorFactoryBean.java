@@ -31,6 +31,6 @@ public class ColorFactoryBean implements FactoryBean<Color> {
     //false：多实例，每次获取都会创建一个新的bean；
     @Override
     public boolean isSingleton() {
-        return false;
+        return true;
     }
 }

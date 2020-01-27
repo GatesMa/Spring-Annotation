@@ -1,6 +1,7 @@
 package com.gatesma.config;
 
 import com.gatesma.bean.Color;
+import com.gatesma.bean.ColorFactoryBean;
 import com.gatesma.bean.Person;
 import com.gatesma.bean.Red;
 import com.gatesma.condition.LinuxCondition;
@@ -91,7 +92,10 @@ public class MainConfig2 {
      * 		2）、要获取工厂Bean本身，我们需要给id前面加一个&
      * 			&colorFactoryBean
      */
-
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
+    }
 
 
 

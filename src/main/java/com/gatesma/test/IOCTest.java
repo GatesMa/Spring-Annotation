@@ -26,6 +26,12 @@ public class IOCTest {
     @Test
     public void testImport() {
         printBeans(applicationContext);
+
+        Object factoryBean = applicationContext.getBean("colorFactoryBean");
+        System.out.println("factoryBean类型："  + factoryBean.getClass());
+
+        Object bean4 = applicationContext.getBean("&colorFactoryBean");
+        System.out.println(bean4.getClass());
     }
 
     private void printBeans(AnnotationConfigApplicationContext applicationContext) {
