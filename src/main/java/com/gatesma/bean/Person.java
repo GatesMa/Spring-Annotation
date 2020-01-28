@@ -1,5 +1,7 @@
 package com.gatesma.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * Copyright (C), 2020
  * FileName: Person
@@ -10,8 +12,19 @@ package com.gatesma.bean;
  */
 public class Person  {
 
+    //使用@Value赋值；
+    //1、基本数值
+    //2、可以写SpEL； #{}
+    //3、可以写${}；取出配置文件【properties】中的值（在运行环境变量里面的值）
+
+    @Value("Marlon")
     private String name;
+
+    @Value("#{20-1}")
     private Integer age;
+
+    @Value("${person.nickName}")
+    private String nickname;
 
     public String getName() {
         return name;
@@ -29,11 +42,20 @@ public class Person  {
         this.age = age;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", nickname='" + nickname + '\'' +
                 '}';
     }
 
