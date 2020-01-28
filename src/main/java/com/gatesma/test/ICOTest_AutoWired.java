@@ -1,5 +1,6 @@
 package com.gatesma.test;
 
+import com.gatesma.bean.Boss;
 import com.gatesma.bean.Person;
 import com.gatesma.config.MainConfigOfPropertyValues;
 import com.gatesma.config.MainConifgOfAutowired;
@@ -29,10 +30,13 @@ public class ICOTest_AutoWired {
 //        printBeans(applicationContext);
 //        System.out.println("================");
 
-        BookService bookService = applicationContext.getBean(BookService.class);
-        System.out.println(bookService);
-        BookDao bookDao = applicationContext.getBean(BookDao.class);
-        System.out.println(bookDao);
+//        BookService bookService = applicationContext.getBean(BookService.class);
+//        System.out.println(bookService);
+//        BookDao bookDao = applicationContext.getBean(BookDao.class);
+//        System.out.println(bookDao);
+
+        Boss boss = (Boss) applicationContext.getBean("boss");
+        System.out.println(boss);
 
         applicationContext.close();
 

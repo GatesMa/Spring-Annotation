@@ -63,16 +63,17 @@ import org.springframework.context.annotation.Primary;
  *
  */
 @Configuration
-@ComponentScan(value = {"com.gatesma.dao", "com.gatesma.service", "com.gatesma.controller"})
+@ComponentScan(value = {"com.gatesma.dao", "com.gatesma.service",
+        "com.gatesma.controller", "com.gatesma.bean"})
 public class MainConifgOfAutowired {
 
-//    @Primary
-//    @Bean("bookDao2")
-//    public BookDao bookDao(){
-//        BookDao bookDao = new BookDao();
-//        bookDao.setLable("2");
-//        return bookDao;
-//    }
+    @Primary
+    @Bean("bookDao")
+    public BookDao bookDao(){
+        BookDao bookDao = new BookDao();
+        bookDao.setLable("2");
+        return bookDao;
+    }
 //
 //    /**
 //     * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
