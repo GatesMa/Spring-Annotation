@@ -1,5 +1,6 @@
 package com.gatesma.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,6 +20,7 @@ public class Boss {
     private Car car;
 
     //构造器要用的组件，都是从容器中获取
+//    @Autowired
     public Boss(Car car){
         this.car = car;
         System.out.println("Boss...有参构造器");

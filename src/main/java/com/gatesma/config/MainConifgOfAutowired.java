@@ -74,17 +74,17 @@ public class MainConifgOfAutowired {
         bookDao.setLable("2");
         return bookDao;
     }
-//
-//    /**
-//     * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
-//     * @param car
-//     * @return
-//     */
-//    @Bean
-//    public Color color(Car car){
-//        Color color = new Color();
-//        color.setCar(car);
-//        return color;
-//    }
+
+    /**
+     * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
+     * @param car
+     * @return
+     */
+    @Bean
+    public Color color(Car car){
+        Color color = new Color();
+        color.setCar(car);
+        return color;
+    }
 
 }

@@ -35,10 +35,10 @@ public class ICOTest_AutoWired {
 //        BookDao bookDao = applicationContext.getBean(BookDao.class);
 //        System.out.println(bookDao);
 
-        Boss boss = (Boss) applicationContext.getBean("boss");
-        System.out.println(boss);
-
-        applicationContext.close();
+//        Boss boss = (Boss) applicationContext.getBean("boss");
+//        System.out.println(boss);
+//
+//        applicationContext.close();
 
     }
 
