@@ -10,6 +10,7 @@ import org.aspectj.lang.annotation.*;
  * Date:     2020/1/30 13:11
  * Description:
  */
+@Aspect
 public class LogAspects {
 
 
