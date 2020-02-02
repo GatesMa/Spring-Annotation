@@ -17,7 +17,7 @@ public class IOCTest_Ext {
 
     @Test
     public void test01(){
-；        AnnotationConfigApplicationContext applicationContext  = new AnnotationConfigApplicationContext(ExtConfig.class);
+        AnnotationConfigApplicationContext applicationContext  = new AnnotationConfigApplicationContext(ExtConfig.class);
 
 
         //发布事件；
