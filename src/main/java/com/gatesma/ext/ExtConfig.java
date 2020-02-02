@@ -1,5 +1,8 @@
 package com.gatesma.ext;
 
+import com.gatesma.bean.Blue;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -104,10 +107,13 @@ import org.springframework.context.annotation.Configuration;
  *
  *
  */
-
+@ComponentScan(value = {"com.gatesma.ext"})
 @Configuration
 public class ExtConfig {
 
-
+    @Bean
+    public Blue blue(){
+        return new Blue();
+    }
 
 }
