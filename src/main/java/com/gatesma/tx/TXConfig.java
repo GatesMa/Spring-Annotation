@@ -2,6 +2,7 @@ package com.gatesma.tx;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -61,6 +62,8 @@ import java.beans.PropertyVetoException;
  * 								如果正常，利用事务管理器，提交事务
  *
  */
+
+@ComponentScan(value = {"com.gatesma.tx"})
 @Configuration
 public class TXConfig {
 
@@ -76,9 +79,10 @@ public class TXConfig {
     }
 
 
-
-    public JdbcTemplate jdbcTemplate() {
-
+    @Bean
+    public JdbcTemplate jdbcTemplate() throws PropertyVetoException {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource());
+        return jdbcTemplate;
     }
 
 }
