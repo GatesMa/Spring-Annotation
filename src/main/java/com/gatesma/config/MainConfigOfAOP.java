@@ -164,7 +164,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 			拦截器链等信息传入创建一个 CglibMethodInvocation 对象，
  * 			并调用 Object retVal =  mi.proceed();
  * 		5）、拦截器链的触发过程;
- * 			1)、如果没有拦截器执行执行目标方法，或者拦截器的索引和拦截器数组-1大小一样（指定到了最后一个拦截器）执行目标方法；
+ * 			1)、如果没有拦截器执行目标方法，或者拦截器的索引和拦截器数组-1大小一样（指定到了最后一个拦截器）执行目标方法；
  * 			2)、链式获取每一个拦截器，拦截器执行invoke方法，每一个拦截器等待下一个拦截器执行完成返回以后再来执行；
  * 				拦截器链的机制，保证通知方法与目标方法的执行顺序；
  *
@@ -184,7 +184,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * 			2）、CglibAopProxy.intercept()；
  * 				1）、得到目标方法的拦截器链（增强器包装成拦截器MethodInterceptor）
  * 				2）、利用拦截器的链式机制，依次进入每一个拦截器进行执行；
- * 				
+ *
  * 				3）、效果：
  * 					正常执行：前置通知-》目标方法-》后置通知-》返回通知
  *
